@@ -16,19 +16,19 @@ const FilterForm = ({ data }) => {
 
     return (
     <div id="cards">
-        <h4>Find an illuminator!</h4>
+        <h4>Find a buddy!</h4>
         <TextField
             label="Find by type of disability"
             value={filter}
             onChange={handleFilterChange}
-            style={{minWidth: '500px'}}
+            style={{ minWidth: '350px', width: '600px' }}
         />
 
         {data && data.filter(el => el.disability.includes(filter)).map((element, index) => {
             return (
             <Card 
                 key = {index} 
-                sx={{ minWidth: '500px' }}
+                sx={{ minWidth: '350px', width: '600px' }}
                 variant="outlined"
             >
             <CardContent>
