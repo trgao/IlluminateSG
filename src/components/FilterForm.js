@@ -21,17 +21,18 @@ const FilterForm = ({ data }) => {
             label="Find by type of disability"
             value={filter}
             onChange={handleFilterChange}
+            style={{minWidth: '500px'}}
         />
 
         {data && data.filter(el => el.disability.includes(filter)).map((element, index) => {
             return (
             <Card 
                 key = {index} 
-                sx={{ minWidth: '350px' }}
+                sx={{ minWidth: '500px' }}
                 variant="outlined"
             >
             <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                <Typography sx={{ fontSize: 20 }} color="text.secondary" gutterBottom>
                 {element.name}
                 </Typography>
                 <Typography variant="h5" component="div">
@@ -42,6 +43,9 @@ const FilterForm = ({ data }) => {
                 </Typography>
                 <Typography variant="h5" component="div">
                 {element.type}
+                </Typography>
+                <Typography variant="p" component="div">
+                Description: {element.description}
                 </Typography>
             </CardContent>
             </Card>
